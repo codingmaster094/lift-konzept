@@ -14,7 +14,7 @@ const xmlEscape = (str) => {
 };
 
 export async function GET() {
-  const baseUrl = process.env.FRONTEND_DOAMIN || "https://lift-konzept-frontend.vercel.app";
+  const baseUrl = process.env.PAYLOAD_DOAMIN ;
   // ... (Data fetching variables remain the same)
   let pagesData = { docs: [] };
   let postsData = { docs: [] };

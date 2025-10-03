@@ -16,7 +16,7 @@ export default async function generatePageMetadata(slug, fallback = {}) {
     const canonical =
       seo.meta.canonicalUrl && seo.meta.canonicalUrl !== ""
         ? seo.meta.canonicalUrl
-        : `https://lift-konzept-frontend.vercel.app`;
+        : ``;
 
     const robots =
       seo.robots && (seo.robots.index || seo.robots.follow)

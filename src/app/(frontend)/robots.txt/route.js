@@ -37,7 +37,7 @@ export async function GET() {
       "allow: /",
       "disallow: /admin",
       `sitemap: ${
-        process.env.FRONTEND_DOAMIN || "https://lift-konzept-frontend.vercel.app"
+        process.env.PAYLOAD_DOAMIN 
       }/sitemap.xml`,
     ].join("\n");
 
