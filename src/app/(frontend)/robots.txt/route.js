@@ -1,7 +1,7 @@
 export async function GET() {
   try {
     const res = await fetch(
-      "https://lift-konzept-backend.vercel.app/api/globals/robots",
+      "https://lift-konzept.vercel.app/api/globals/robots",
       {
         next: { revalidate: 0 },
       }

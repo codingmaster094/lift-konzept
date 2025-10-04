@@ -25,7 +25,7 @@ export const Ratgeber: CollectionConfig = {
     useAsTitle: 'title',
     preview: (doc) => {
       if (!doc?.slug) return null
-      return `https://lift-konzept-backend.vercel.app/ratgeber/${doc.slug}`
+      return `https://lift-konzept.vercel.app/ratgeber/${doc.slug}`
     },
   },
   access: {

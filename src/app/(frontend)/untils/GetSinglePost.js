@@ -3,7 +3,7 @@ export default async function GetSinglePosts(params) {
     const response = await fetch(
       `${
         `${process.env.NEXT_RATGEBER_SINGLE_BASE_URL}${params}` ||
-        `https://lift-konzept-backend.vercel.app/api/ratgeber?where[slug][equals]=${params}`
+        `https://lift-konzept.vercel.app/api/ratgeber?where[slug][equals]=${params}`
       }`,
       { next: { revalidate: 0 } }
     );

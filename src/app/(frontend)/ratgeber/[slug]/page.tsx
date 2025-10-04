@@ -31,7 +31,7 @@ const SinglePostPage = () => {
   useEffect(() => {
     if (!slug) return
 
-    fetch(`https://lift-konzept-backend.vercel.app/api/ratgeber?where[slug][equals]=${slug}`)
+    fetch(`https://lift-konzept.vercel.app/api/ratgeber?where[slug][equals]=${slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.docs && data.docs.length > 0) {

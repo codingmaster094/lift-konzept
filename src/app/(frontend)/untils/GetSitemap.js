@@ -3,7 +3,7 @@ export default async function GetSiteMap(params) {
     const response = await fetch(
       `${
         `${process.env.PAYLOAD_DOAMIN}/${params}` ||
-        `https://lift-konzept-backend.vercel.app/${params}`
+        `https://lift-konzept.vercel.app/${params}`
       }`,
       { next: { revalidate: 0 } }
     );
