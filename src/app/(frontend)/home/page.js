@@ -21,7 +21,6 @@ export default async function Home() {
     return <div>No data available.</div>;
   }
 
-  console.log('HomePageData', HomePageData)
   return (
     <>
 

@@ -1,4 +1,4 @@
-export default async function generatePageMetadata(slug, fallback = {}) {
+export default async function generatePageMetadata(params, fallback = {}) {
   try {
     const metadata = await fetch(
       `${

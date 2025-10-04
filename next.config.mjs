@@ -4,7 +4,7 @@ import { withPayload } from '@payloadcms/next/withPayload'
 const nextConfig = {
   // Your Next.js config here
   images: {
-    domains: ['lift-konzept-backend.vercel.app'],
+    domains: ['lift-konzept.vercel.app'],
     unoptimized: true,
   },
   webpack: (webpackConfig) => {

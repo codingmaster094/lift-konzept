@@ -8,7 +8,6 @@ export default async function Alldata(params) {
       { next: { revalidate: 0 } }
     );
 
-    console.log('response', response)
     if (!response) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);
     }

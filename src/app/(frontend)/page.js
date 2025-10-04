@@ -10,7 +10,7 @@ export default async function Home() {
 }
 
 export async function generateMetadata() {
-  return generatePageMetadata("/home", {
+  return generatePageMetadata("home", {
     title: "home",
     description: "home",
   });
