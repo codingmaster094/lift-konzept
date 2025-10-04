@@ -32,7 +32,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  serverURL: 'https://lift-konzept-backend.vercel.app',
+  serverURL: 'https://lift-konzept.vercel.app',
   i18n: {
     supportedLanguages: { en, de },
   },
@@ -48,7 +48,7 @@ export default buildConfig({
       ],
     },
   },
-  cors: ['https://lift-konzept-backend.vercel.app'],
+  cors: ['https://lift-konzept.vercel.app'],
   collections: [Pages, Users, Media, Posts, Ratgeber],
   globals: [
     Header,
