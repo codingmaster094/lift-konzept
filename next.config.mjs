@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     domains: ['lift-konzept.vercel.app'],
     unoptimized: true,
-    formats: ['image/avif', 'image/webp', 'image/png', 'image/jpeg', 'image/svg+xml', 'image/gif', 'image/jpg'],
+     formats: ['image/avif', 'image/webp'],
   },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
