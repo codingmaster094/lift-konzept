@@ -124,7 +124,7 @@ const HeroBanner = ({ image, images_1, heroData }) => {
                   {/* Next Step */}
                   <Link
                     href={heroData.heroformsection_redirect_link.url}
-                    role="button"
+                    role="navigation"
                     aria-label="Weiter zur nächsten Frage"
                     className="inline-flex items-center gap-24 mt-8 md:mt-24 text-white text-h5"
                   >
