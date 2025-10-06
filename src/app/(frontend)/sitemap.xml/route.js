@@ -14,7 +14,7 @@ const xmlEscape = (str) => {
 };
 
 export async function GET() {
-  const baseUrl = process.env.PAYLOAD_DOAMIN ;
+  const baseUrl = process.env.BASE_DOAMAIN ;
   // ... (Data fetching variables remain the same)
   let pagesData = { docs: [] };
   let postsData = { docs: [] };
@@ -23,21 +23,21 @@ export async function GET() {
   try {
     // ... (Data fetching logic remains the same)
 
-    const pagesRes = await fetch(`${process.env.PAYLOAD_DOAMIN}/api/pages?limit=1000`);
+    const pagesRes = await fetch(`${process.env.BASE_DOAMAIN}/api/pages?limit=1000`);
     if (pagesRes.ok) {
         pagesData = await pagesRes.json();
     } else {
         console.error("Failed to fetch pages:", await pagesRes.text());
     }
     // ... (Fetching posts and ratgeber logic)
-    const postsRes = await fetch(`${process.env.PAYLOAD_DOAMIN}/api/posts?limit=1000`);
+    const postsRes = await fetch(`${process.env.BASE_DOAMAIN}/api/posts?limit=1000`);
     if (postsRes.ok) {
         postsData = await postsRes.json();
     } else {
         console.error("Failed to fetch posts:", await postsRes.text());
     }
 
-    const ratgeberRes = await fetch(`${process.env.PAYLOAD_DOAMIN}/api/ratgeber?limit=1000`);
+    const ratgeberRes = await fetch(`${process.env.BASE_DOAMAIN}/api/ratgeber?limit=1000`);
     if (ratgeberRes.ok) {
         ratgeberData = await ratgeberRes.json();
     } else {

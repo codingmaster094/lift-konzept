@@ -37,7 +37,7 @@ export async function GET() {
       "allow: /",
       "disallow: /admin",
       `sitemap: ${
-        process.env.PAYLOAD_DOAMIN 
+        process.env.BASE_DOAMAIN 
       }/sitemap.xml`,
     ].join("\n");
 

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 const CtaSection = ({ CtaSectionData }) => {
   return (
     <section className="">
@@ -26,33 +26,29 @@ const CtaSection = ({ CtaSectionData }) => {
                 {CtaSectionData.richText.root.children &&
                   CtaSectionData.richText.root.children.length > 0 &&
                   CtaSectionData.richText.root.children.map((child, index) => {
-                    return <p key={index}>{child.children[0].text}</p>;
+                    return <p key={index}>{child.children[0].text}</p>
                   })}
               </div>
             </div>
             <div className="btns flex justify-start items-start md:items-center gap-16 md:gap-32 mt-32 md:flex-row flex-col">
-              {CtaSectionData.cta_link1.label != "" && (
+              {CtaSectionData.cta_link1.label != '' && (
                 <Link
                   href={CtaSectionData.cta_link1.url}
                   role="button"
                   className="btn-secondary  before:!bg-white hover:!text-primary"
                   aria-label="Jetzt Beratungstermin buchen"
                 >
-                  <span className="relative z-10">
-                    {CtaSectionData.cta_link1.label}
-                  </span>
+                  <span className="relative z-10">{CtaSectionData.cta_link1.label}</span>
                 </Link>
               )}
-              {CtaSectionData.cta_link2.label != "" && (
+              {CtaSectionData.cta_link2.label != '' && (
                 <Link
                   href={CtaSectionData.cta_link2.url}
                   role="button"
                   className="btn-link text-white text-base"
                   aria-label="Kostenlose Beratung starten"
                 >
-                  <span className="relative z-10">
-                    {CtaSectionData.cta_link2.label}
-                  </span>
+                  <span className="relative z-10">{CtaSectionData.cta_link2.label}</span>
                 </Link>
               )}
             </div>
@@ -60,7 +56,7 @@ const CtaSection = ({ CtaSectionData }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CtaSection;
+export default CtaSection

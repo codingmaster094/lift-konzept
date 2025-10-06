@@ -23,6 +23,15 @@ export const SEO: Field = {
         MetaDescriptionField({ hasGenerateFn: true }),
         MetaImageField({ relationTo: 'media' }),
         {
+          name: 'schemaMarkup',
+          label: 'Schema Markup (JSON-LD)',
+          type: 'code',
+          admin: {
+            language: 'json',
+            description: 'Enter your JSON-LD schema markup here. This is typically used for rich snippets.',
+          },
+        },
+        {
           name: 'indexing',
           type: 'radio',
           label: 'Indexing',

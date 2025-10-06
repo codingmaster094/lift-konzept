@@ -300,6 +300,10 @@ export interface Post {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -503,6 +507,10 @@ export interface Ratgeber {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -721,6 +729,7 @@ export interface PostsSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -863,6 +872,7 @@ export interface RatgeberSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -1237,6 +1247,10 @@ export interface Home {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -1401,6 +1415,10 @@ export interface Treppenlifte {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -1617,6 +1635,10 @@ export interface KostenFinanzierung {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -1728,6 +1750,10 @@ export interface TreppenlifteRatgeber {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -1776,6 +1802,10 @@ export interface Impressum {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -1824,6 +1854,10 @@ export interface Datenschutzerklarung {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      /**
+       * Enter your JSON-LD schema markup here. This is typically used for rich snippets.
+       */
+      schemaMarkup?: string | null;
       indexing?: ('index' | 'noindex') | null;
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
@@ -2111,6 +2145,7 @@ export interface HomeSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -2240,6 +2275,7 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -2381,6 +2417,7 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -2481,6 +2518,7 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -2518,6 +2556,7 @@ export interface ImpressumSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
@@ -2555,6 +2594,7 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              schemaMarkup?: T;
               indexing?: T;
               following?: T;
               canonicalUrl?: T;
