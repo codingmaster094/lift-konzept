@@ -10,7 +10,8 @@ const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
 const SEO_schema = async ({ slug, faqs }) => {
   try {
     const metadata = await Alldata(slug);
-    const schemaJSON = metadata?.schema || null;
+    console.log('metadata', metadata)
+    const schemaJSON = metadata?.seo || null;
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
@@ -18,6 +19,27 @@ const SEO_schema = async ({ slug, faqs }) => {
     const pageUrl = "https://lift-konzept.vercel.app/"; // Define once
 
     // Build FAQ Schema
+    const Schema =
+      schemaJSON 
+        ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "url": pageUrl,
+          "mainEntityOfPage": {
+            "@id": pageUrl
+          },
+          "name": "FAQ – Psychotherapie",
+          "headline": schemaJSON.meta.title,
+          "description": schemaJSON.meta.description,
+          "datePublished":schemaJSON.publishedAt,
+          "dateModified": schemaJSON.updatedAt,
+          "author":{
+            "@type":"Person",
+            "name":"support@werbeagentur-sitzler.de"
+          },
+        }
+        : null;
+
     const faqSchema =
       faqs && faqs.length > 0
         ? {
@@ -40,7 +62,7 @@ const SEO_schema = async ({ slug, faqs }) => {
         }
         : null;
 
-    return <SchemaInjector schemaJSON={schemaJSON} faqSchema={faqSchema} />;
+    return <SchemaInjector schemaJSON={Schema} faqSchema={faqSchema} />;
   } catch (error) {
     console.error("Error fetching SEO schema:", error);
     return null;

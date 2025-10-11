@@ -14,7 +14,7 @@ export const GET = async (req: NextRequest) => {
       return Response.json({ success: false, message: 'Missing slug parameter' }, { status: 400 })
     }
 
-    const data = await payload.findGlobal({ slug })
+    const data = await payload.findGlobal({ slug , depth: 2})
 
     return Response.json({
       success: true,
