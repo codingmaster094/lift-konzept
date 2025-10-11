@@ -11,12 +11,11 @@ const SEO_schema = async ({ slug, faqs }) => {
   try {
     const metadata = await Alldata(slug);
     const schemaJSON = metadata?.schema || null;
-    console.log('metadata', metadata)
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
     // The base URL for the page, which is currently used in mainEntityOfPage
-    const pageUrl = "https://dr-marhenke-kollegen.vercel.app/"; // Define once
+    const pageUrl = "https://lift-konzept.vercel.app/"; // Define once
 
     // Build FAQ Schema
     const faqSchema =
@@ -32,11 +31,10 @@ const SEO_schema = async ({ slug, faqs }) => {
           "headline": "Häufig gestellte Fragen zur Psychotherapie",
           "mainEntity": faqs.map((faq) => ({
             "@type": "Question",
-            // ... (rest of the Question properties remain the same)
-            "name": faq.faq_content_title,
+            "name": faq.title,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": faq.faq_content_description.replace(/<\/?p>/g, "")
+              "text": faq.richText.root.children[0].children[0].text.replace(/<\/?p>/g, "")
             }
           }))
         }
