@@ -48,7 +48,10 @@ export default buildConfig({
       ],
     },
   },
-  cors: ['https://lift-konzept.vercel.app'],
+  cors: [
+  'https://lift-konzept.vercel.app',
+  'http://localhost:3000'
+],
   collections: [Pages, Users, Media, Posts, Ratgeber],
   globals: [
     Header,

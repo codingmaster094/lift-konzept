@@ -3,7 +3,7 @@ export default async function Alldata(params) {
     const response = await fetch(
       `${
         process.env.NEXT_PUBLIC_BASE_URL ||
-        "https://lift-konzept.vercel.app/api/globals"
+        "https://lift-konzept.vercel.app/my-route?slug="
       }${params}`,
       { next: { revalidate: 0 } }
     );

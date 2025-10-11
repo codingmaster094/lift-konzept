@@ -9,15 +9,14 @@ const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
 
 const SEO_schema = async ({ slug, faqs }) => {
   try {
-    const metadata = await Alldata(slug);
+    const metadata =  await Alldata(slug);
+    const schemaJSON = metadata || null;
     console.log('metadata', metadata)
-    const schemaJSON = metadata?.seo || null;
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
     // The base URL for the page, which is currently used in mainEntityOfPage
     const pageUrl = "https://lift-konzept.vercel.app/"; // Define once
-
     // Build FAQ Schema
     const Schema =
       schemaJSON 
@@ -29,13 +28,13 @@ const SEO_schema = async ({ slug, faqs }) => {
             "@id": pageUrl
           },
           "name": "FAQ – Psychotherapie",
-          "headline": schemaJSON.meta.title,
-          "description": schemaJSON.meta.description,
+          "headline": schemaJSON.seo.meta.title,
+          "description": schemaJSON.seo.meta.description,
           "datePublished":schemaJSON.publishedAt,
           "dateModified": schemaJSON.updatedAt,
           "author":{
             "@type":"Person",
-            "name":"support@werbeagentur-sitzler.de"
+            "name": schemaJSON.author.email
           },
         }
         : null;

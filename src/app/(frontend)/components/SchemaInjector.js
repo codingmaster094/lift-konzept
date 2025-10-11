@@ -4,7 +4,6 @@ import { useEffect } from "react";
 export default function SchemaInjector({ schemaJSON, faqSchema }) {
   useEffect(() => {
     if (!schemaJSON && !faqSchema) return;
-    console.log('schemaJSON', schemaJSON)
     const graphItems = [];
     if (schemaJSON) graphItems.push(schemaJSON);
     if (faqSchema) graphItems.push(faqSchema);
