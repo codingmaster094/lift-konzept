@@ -3,6 +3,7 @@ import GetSinglePosts from '../../untils/GetSinglePost'
 import HeroBanner from '../../components/HeroBanner';
 import SingleDetails from '../../components/SingleDetails';
 import generatePageMetadata from '../../untils/generatePageMetadata';
+import SEO_schema from '../../components/SEO_schema';
 
 const page = async({params}) => {
     const { slug } = await params;
@@ -20,6 +21,7 @@ const page = async({params}) => {
 
   return (
     <>
+    <SEO_schema slug={slug} faqs={""} />
      <HeroBanner
         image="/images/home_hero-bg.png"
         images_1="/images/hero-btm-bg.png"

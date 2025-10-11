@@ -6,6 +6,7 @@ import Logos from "../components/Logos";
 import React from "react";
 import Alldata from "../untils/AllDataFatch";
 import generatePageMetadata from "../untils/generatePageMetadata";
+import SEO_schema from "../components/SEO_schema";
 
 const page = async () => {
   let kosten_finanzierungData;
@@ -21,6 +22,7 @@ const page = async () => {
   }
   return (
     <>
+    <SEO_schema slug="/kosten-finanzierung" faqs={""} />
       <HeroBanner
         image="/images/home_hero-bg.png"
         images_1="/images/hero-btm-bg.png"

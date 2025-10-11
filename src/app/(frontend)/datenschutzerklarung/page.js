@@ -1,6 +1,7 @@
 import React from "react";
 import Alldata from "../untils/AllDataFatch";
 import generatePageMetadata from "../untils/generatePageMetadata";
+import SEO_schema from "../components/SEO_schema";
 
 const page = async () => {
   let datenschutzerklarungPageData;
@@ -15,6 +16,8 @@ const page = async () => {
     return <div>No data available.</div>;
   }
   return (
+    <>
+    <SEO_schema slug="/datenschutzerklarung" faqs={""} />
     <section className="policy_content term-policy">
       <div className="py-32 md:py-50 xl:py-[70px] bg-[#0065a3] text-white">
         <div className="container mx-auto px-[15px] ">
@@ -27,10 +30,11 @@ const page = async () => {
           dangerouslySetInnerHTML={{
             __html: datenschutzerklarungPageData.contents.Gutenberg_html,
           }}
-        ></div>
+          ></div>
       </div>
       <div className="h-[clamp(2.5rem,-1.5789rem+6.5789vw,5rem)]"></div>
     </section>
+          </>
   );
 };
 

@@ -21,7 +21,6 @@ export default async function Home() {
   if (!HomePageData) {
     return <div>No data available.</div>;
   }
-console.log('HomePageData.FaqSection.FaqContent', HomePageData.FaqSection.FaqContent)
   return (
     <>
       <SEO_schema slug="/home" faqs={HomePageData.FaqSection.FaqContent} />

@@ -1,11 +1,11 @@
+import React from 'react'
 import CtaSection from '../components/CtaSection'
 import HeroBanner from '../components/HeroBanner'
 import SingleBlog from '../components/SingleBlog'
-import React from 'react'
 import Alldata from '../untils/AllDataFatch'
 import GetPosts from '../untils/GetRatgeber'
 import generatePageMetadata from '../untils/generatePageMetadata'
-
+import SEO_schema from "../components/SEO_schema";
 const page = async() => {
   let Treppenlifte_RatgeberData;
   let RatgeberData;
@@ -22,6 +22,7 @@ const page = async() => {
   }
   return (
     <>
+    <SEO_schema slug="/ratgeber" faqs={""} />
     <HeroBanner 
     heroformsection={false}
     image="/images/home_hero-bg.png"

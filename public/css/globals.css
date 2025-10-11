@@ -334,6 +334,51 @@ h3.rank-math-question {
   
 }
 
+/* Impresum and datenschuzerklarund css */
+.payload-richtext p:not(:last-child) {
+    padding-bottom: 16px;
+}
+.payload-richtext h3 {
+    font-size: clamp(22px, 1.5vw, 24px);
+
+font-weight: 600;
+}
+.payload-richtext h4 {
+    font-size: clamp(18px, 1.5vw, 21px);
+    padding-bottom: 16px;
+
+padding-top: 20px;
+
+font-weight: 500;
+
+}
+.payload-richtext h5 {
+    font-size: clamp(18px, 1.5vw, 20px);
+    font-weight: 500;
+    padding-bottom: 16px;
+}
+.payload-richtext ul.list-bullet {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: disc;
+    padding-left: 20px;
+    margin: 24px 0;
+}
+.payload-richtext ul.list-bullet li a, .payload-richtext a {
+    color: #0065a3;
+}
+.payload-richtext ol{
+display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: decimal;
+    padding-left: 20px;
+    margin: 24px 0;
+ 
+}
+ 
+
 @media (max-width:768px){
   .page-default-content blockquote p, .single-post-content blockquote p{
     max-width: 100%;
