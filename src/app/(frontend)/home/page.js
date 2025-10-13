@@ -23,7 +23,7 @@ export default async function Home() {
   }
   return (
     <>
-      <SEO_schema slug="/home" faqs={HomePageData.FaqSection.FaqContent} />
+      <SEO_schema slug="home" faqs={HomePageData.FaqSection.FaqContent} />
       <HeroBanner
         image="/images/home_hero-bg.png"
         images_1="/images/hero-btm-bg.png"

@@ -22,7 +22,7 @@ const page = async () => {
   }
   return (
     <>
-    <SEO_schema slug="/kosten-finanzierung" faqs={""} />
+    <SEO_schema slug="kosten-finanzierung" faqs={""} />
       <HeroBanner
         image="/images/home_hero-bg.png"
         images_1="/images/hero-btm-bg.png"
@@ -40,7 +40,7 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
-  return generatePageMetadata("/kosten-finanzierung", {
+  return generatePageMetadata("kosten-finanzierung", {
     title: "Kosten Finanzierung",
     description: "kosten-finanzierung",
   });

@@ -6,8 +6,8 @@ const page = async() => {
      let HeaderData;
      let MenusData;
       try {
-        HeaderData = await Alldata("/header");
-        MenusData = await Alldata("/menus");
+        HeaderData = await Alldata("header");
+        MenusData = await Alldata("menus");
       } catch (error) {
         console.error("Error fetching data:", error);
         return <div>Error loading data.</div>;

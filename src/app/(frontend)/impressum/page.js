@@ -17,7 +17,7 @@ const page = async () => {
   }
   return (
     <>
-    <SEO_schema slug="/impressum" faqs={""} />
+    <SEO_schema slug="impressum" faqs={""} />
     <section className="policy_content term-policy">
       <div className="py-32 md:py-50 xl:py-[70px] bg-[#0065a3] text-white">
         <div className="container mx-auto px-[15px] ">
@@ -41,7 +41,7 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
-  return generatePageMetadata("/impressum", {
+  return generatePageMetadata("impressum", {
     title: "Impressum",
     description: "impressum",
   });

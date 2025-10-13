@@ -11,27 +11,6 @@ import FaqSection from '@/app/components/FaqSection/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { SEO } from '@/app/components/SEO/config'
 
-// Function to manually fetch the author if defaultDepth failed (the failsafe)
-export const populateAuthor = async ({ doc, req }: { doc: any; req: PayloadRequest }) => {
-  // Only run if author exists but is still an ID string
-  if (doc?.author && typeof doc.author === 'string') {
-    try {
-      // Fetch user manually (make sure to include depth=0 for just the user fields)
-      const user = await req.payload.findByID({
-        collection: 'users',
-        id: doc.author,
-        depth: 1, // fetch relationships inside user if needed
-        overrideAccess: true, // ensure it works even for unauthenticated reads
-      })
-
-      doc.author = user
-    } catch (error) {
-      console.error(`❌ Error populating author ${error}:`)
-    }
-  }
-
-  return doc
-}
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -179,6 +158,5 @@ export const HomePage: GlobalConfig = {
   ],
   hooks: {
     afterChange: [revalidateHome],
-    // afterRead: [populateAuthor],
   },
 }

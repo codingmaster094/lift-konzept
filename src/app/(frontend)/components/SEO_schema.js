@@ -9,10 +9,9 @@ const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
 
 const SEO_schema = async ({ slug, faqs }) => {
   try {
-    const metadata =  await Alldata(slug);
-    const schemaJSON = metadata || null;
-    console.log('metadata', metadata)
-
+    const metadata = await Alldata(slug);
+    const schemaJSON = metadata?.seo || null;
+    const author = metadata || null;
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
     // The base URL for the page, which is currently used in mainEntityOfPage
@@ -28,13 +27,13 @@ const SEO_schema = async ({ slug, faqs }) => {
             "@id": pageUrl
           },
           "name": "FAQ – Psychotherapie",
-          "headline": schemaJSON.seo.meta.title,
-          "description": schemaJSON.seo.meta.description,
-          "datePublished":schemaJSON.publishedAt,
-          "dateModified": schemaJSON.updatedAt,
+          "headline": schemaJSON.meta.title,
+          "description": schemaJSON.meta.description,
+          "datePublished":author.publishedAt,
+          "dateModified": author.updatedAt,
           "author":{
             "@type":"Person",
-            "name": schemaJSON.author.email
+            "name":author.author.email
           },
         }
         : null;

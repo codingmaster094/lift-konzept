@@ -2,7 +2,7 @@ import React from 'react'
 import GetSinglePosts from '../../untils/GetSinglePost'
 import HeroBanner from '../../components/HeroBanner';
 import SingleDetails from '../../components/SingleDetails';
-import generatePageMetadata from '../../untils/generatePageMetadata';
+import generatepostMetadata from '../../untils/generatepostMetadata';
 import SEO_schema from '../../components/SEO_schema';
 
 const page = async({params}) => {
@@ -37,7 +37,7 @@ export default page
 
 export async function generateMetadata({params}) {
   const {slug} = await params
-  return generatePageMetadata(`/${slug}`, {
+  return generatepostMetadata(`${slug}`, {
     title: `${slug}`,
     description: `${slug}`,
   });

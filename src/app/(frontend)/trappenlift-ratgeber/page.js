@@ -22,7 +22,7 @@ const page = async() => {
   }
   return (
     <>
-    <SEO_schema slug="/ratgeber" faqs={""} />
+    <SEO_schema slug="treppenlifte-ratgeber" faqs={""} />
     <HeroBanner 
     heroformsection={false}
     image="/images/home_hero-bg.png"
@@ -39,7 +39,7 @@ const page = async() => {
 export default page
 
 export async function generateMetadata() {
-  return generatePageMetadata("/treppenlifte-ratgeber", {
+  return generatePageMetadata("treppenlifte-ratgeber", {
     title: "Treppenlifte Ratgeber",
     description: "treppenlifte-ratgeber",
   });

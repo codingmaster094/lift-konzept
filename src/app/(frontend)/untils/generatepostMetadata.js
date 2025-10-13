@@ -1,18 +1,19 @@
-export default async function generatePageMetadata(params , fallback ={}) {
+export default async function generatepostMetadata(params , fallback ={}) {
   try {
     const metadata = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL ||
-      "https://lift-konzept.vercel.app//my-route?slug="
+      `${process.env.NEXT_RATGEBER_SINGLE_BASE_URL ||
+      "https://lift-konzept.vercel.app/api/ratgeber?where[slug][equals]="
       }${params}`,
       { next: { revalidate: 0 } }
     );
 
+    console.log('metadata', metadata)
     if (!metadata) {
       throw new Error(`Failed to fetch data: ${metadata.statusText}`);
     }
 
     const data = await metadata.json();
-    const seo = data?.data.seo || {};
+    const seo = data?.docs.seo || {};
 
     const title = seo.meta.title != undefined ? seo.meta.title : "Default title"
     const description = seo.meta.description || fallback.description || "Default Description";

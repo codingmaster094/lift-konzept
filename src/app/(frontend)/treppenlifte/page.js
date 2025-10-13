@@ -22,7 +22,7 @@ const page = async () => {
   }
   return (
     <>
-      <SEO_schema slug="/treppenlifte" faqs={""} />
+      <SEO_schema slug="treppenlifte" faqs={""} />
       <HeroBanner
         image="/images/home_hero-bg.png"
         images_1="/images/hero-btm-bg.png"
@@ -41,7 +41,7 @@ const page = async () => {
 export default page
 
 export async function generateMetadata() {
-  return generatePageMetadata("/treppenlifte", {
+  return generatePageMetadata("treppenlifte", {
     title: "Treppenlifte",
     description: "treppenlifte",
   });
