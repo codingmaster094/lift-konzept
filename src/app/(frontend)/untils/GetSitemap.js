@@ -5,7 +5,7 @@ export default async function GetSiteMap(params) {
         `${process.env.BASE_DOAMAIN}/${params}` ||
         `https://lift-konzept.vercel.app/${params}`
       }`,
-      {  next: { revalidate: 60 }, }
+      {  next: { revalidate: 60 } }
     );
     if (!response) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);

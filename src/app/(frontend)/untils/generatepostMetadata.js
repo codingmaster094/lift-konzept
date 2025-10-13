@@ -4,7 +4,7 @@ export default async function generatepostMetadata(params , fallback ={}) {
       `${process.env.NEXT_RATGEBER_SINGLE_BASE_URL ||
       "https://lift-konzept.vercel.app/api/ratgeber?where[slug][equals]="
       }${params}`,
-      {  next: { revalidate: 60 }, }
+      {  next: { revalidate: 60 } }
     );
 
     console.log('metadata', metadata)
