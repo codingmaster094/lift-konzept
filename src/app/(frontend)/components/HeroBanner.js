@@ -69,7 +69,7 @@ const HeroBanner = ({ image, images_1, heroData }) => {
             heroData.heroImage.url !=undefined && 
             <Image
               className="absolute top-0 w-full h-full object-cover"
-              src={heroData.heroImage.url}
+              srcset={heroData.heroImage.url}
               alt={heroData.heroImage.alt}
               role="img"
               width={heroData.heroImage.width}
@@ -131,7 +131,6 @@ const HeroBanner = ({ image, images_1, heroData }) => {
                     <Image
                       src="/images/Right.svg"
                       alt="icon for next step"
-                      role="presentation"
                       width={48}
                       height={48}
                       fetchPriority="high"
