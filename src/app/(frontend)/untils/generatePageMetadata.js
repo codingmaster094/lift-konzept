@@ -14,15 +14,15 @@ export default async function generatePageMetadata(params , fallback ={}) {
     const data = await metadata.json();
     const seo = data?.data?.seo || {};
 
-    const title = seo.meta.title != undefined ? seo.meta.title : "Default title"
-    const description = seo.meta.description || fallback.description || "Default Description";
+    const title = seo?.meta?.title != undefined ? seo?.meta?.title : "Default title"
+    const description = seo?.meta?.description || fallback.description || "Default Description";
 
     const canonical =
-      seo.meta.canonicalUrl && seo.meta.canonicalUrl !== ""
-        ? seo.meta.canonicalUrl
+      seo?.meta?.canonicalUrl && seo?.meta?.canonicalUrl !== ""
+        ? seo?.meta?.canonicalUrl
         : ``;
 
-    const robots = `${seo.meta.indexing},${seo.meta.following}`
+    const robots = `${seo?.meta?.indexing},${seo?.meta?.following}`
         ||  "noindex,nofollow";
 
     return {
@@ -34,8 +34,8 @@ export default async function generatePageMetadata(params , fallback ={}) {
       robots,
       openGraph: {
         type: "article",
-        title: seo.social?.facebook?.title || title,
-        description: seo.social?.facebook?.description || description,
+        title: seo?.social?.facebook?.title || title,
+        description: seo?.social?.facebook?.description || description,
         url: canonical,
       },
     };
