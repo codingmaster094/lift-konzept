@@ -8,6 +8,8 @@ export default async function generatePageMetadata(params, fallback = {}) {
       next: { revalidate: 60 },
     });
 
+
+    
     if (!res.ok) {
       throw new Error(`Failed to fetch SEO data: ${res.statusText}`);
     }
