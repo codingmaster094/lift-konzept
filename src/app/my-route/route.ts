@@ -3,14 +3,11 @@ import { getPayload } from 'payload'
 import { NextRequest, NextResponse } from 'next/server'
 import type { GlobalSlug } from 'payload'
 
-export const revalidate = 0 // disables caching in Next.js
+export const revalidate = 60
 
 export const GET = async (req: NextRequest) => {
   try {
-    // ✅ Wait for Payload to be ready
     const payload = await getPayload({ config: await configPromise })
-
-    // ✅ Get ?slug= param from URL
     const searchParams = req.nextUrl.searchParams
     const slug = searchParams.get('slug') as GlobalSlug | null
 
@@ -21,7 +18,6 @@ export const GET = async (req: NextRequest) => {
       )
     }
 
-    // ✅ Fetch the global with full depth
     const data = await payload.findGlobal({
       slug,
       depth: 2,
@@ -40,7 +36,7 @@ export const GET = async (req: NextRequest) => {
       data,
     })
   } catch (error) {
-    console.error('❌ Error fetching global:', error)
+    console.error('Error fetching global:', error)
     return NextResponse.json(
       {
         success: false,
