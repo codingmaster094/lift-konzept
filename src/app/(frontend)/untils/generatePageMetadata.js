@@ -1,24 +1,29 @@
-export default async function generatePageMetadata(params, fallback = {}) {
+export default async function generatePageMetadata(params , fallback ={}) {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL || "https://lift-konzept.vercel.app/my-route?slug="}${params}`,
-      { next: { revalidate: 60 } }
+    const metadata = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL ||
+      "https://lift-konzept.vercel.app//my-route?slug="
+      }${params}`,
+      { next: { revalidate: 0 } }
     );
 
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.statusText}`);
+    if (!metadata) {
+      throw new Error(`Failed to fetch data: ${metadata.statusText}`);
     }
 
-    const data = await res.json();
+    const data = await metadata.json();
+    const seo = data?.data.seo || {};
 
-    const seo = data?.data?.seo || {};
-    const meta = seo?.meta || {};
-    const social = seo?.social || {};
+    const title = seo.meta.title != undefined ? seo.meta.title : "Default title"
+    const description = seo.meta.description || fallback.description || "Default Description";
 
-    const title = meta?.title || fallback?.title || "Default title";
-    const description = meta?.description || fallback?.description || "Default description";
-    const canonical = meta?.canonicalUrl || "";
-    const robots = `${meta?.indexing || "noindex"},${meta?.following || "nofollow"}`;
+    const canonical =
+      seo.meta.canonicalUrl && seo.meta.canonicalUrl !== ""
+        ? seo.meta.canonicalUrl
+        : ``;
+
+    const robots = `${seo.meta.indexing},${seo.meta.following}`
+        ||  "noindex,nofollow";
 
     return {
       title,
@@ -29,17 +34,15 @@ export default async function generatePageMetadata(params, fallback = {}) {
       robots,
       openGraph: {
         type: "article",
-        title: social?.facebook?.title || title,
-        description: social?.facebook?.description || description,
+        title: seo.social?.facebook?.title || title,
+        description: seo.social?.facebook?.description || description,
         url: canonical,
       },
     };
+
+
   } catch (error) {
     console.error("Error in Alldata:", error);
-    return {
-      title: fallback?.title || "Default title",
-      description: fallback?.description || "Default description",
-      robots: "noindex,nofollow",
-    };
+    throw error; // Rethrow the error to be caught in the calling component
   }
 }
