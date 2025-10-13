@@ -15,7 +15,6 @@ const page = async () => {
   if (!datenschutzerklarungPageData) {
     return <div>No data available.</div>;
   }
-  console.log('datenschutzerklarungPageData', datenschutzerklarungPageData)
   return (
     <>
     <SEO_schema slug="datenschutzerklarung" faqs={""} />

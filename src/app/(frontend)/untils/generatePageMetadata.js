@@ -1,29 +1,35 @@
-export default async function generatePageMetadata(params , fallback ={}) {
+export default async function generatePageMetadata(params, fallback = {}) {
   try {
-    const metadata = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL ||
-      "https://lift-konzept.vercel.app/my-route?slug="
-      }${params}`,
-      {  next: { revalidate: 60 }}
-    );
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL ||
+      "https://lift-konzept.vercel.app/my-route?slug=";
 
-    if (!metadata) {
-      throw new Error(`Failed to fetch data: ${metadata.statusText}`);
+    const res = await fetch(`${baseUrl}${params}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch SEO data: ${res.statusText}`);
     }
 
-    const data = await metadata.json();
-    const seo = data?.data.seo || {};
+    const json = await res.json();
 
-    const title = seo.meta.title != undefined ? seo.meta.title : "Default title";
-    const description = seo.meta.description || fallback.description || "Default Description";
+    // ✅ Ensure data structure exists
+    const seo = json?.data?.seo ?? {};
+    const meta = seo?.meta ?? {};
+
+    const title =
+      meta?.title || fallback.title || "Default Title";
+    const description =
+      meta?.description || fallback.description || "Default Description";
 
     const canonical =
-      seo.meta.canonicalUrl && seo.meta.canonicalUrl !== ""
-        ? seo.meta.canonicalUrl
-        : ``;
+      meta?.canonicalUrl || "";
 
-    const robots = `${seo.meta.indexing},${seo.meta.following}`
-        ||  "noindex,nofollow";
+    const robots =
+      meta?.indexing && meta?.following
+        ? `${meta.indexing},${meta.following}`
+        : "noindex,nofollow";
 
     return {
       title,
@@ -34,15 +40,18 @@ export default async function generatePageMetadata(params , fallback ={}) {
       robots,
       openGraph: {
         type: "article",
-        title: seo.social?.facebook?.title || title,
-        description: seo.social?.facebook?.description || description,
+        title: title,
+        description: description,
         url: canonical,
       },
     };
-
-
   } catch (error) {
-    console.error("Error in Alldata:", error);
-    throw error; 
+    console.error("Error in generatePageMetadata:", error);
+
+    // ✅ Never throw during build, always return fallback
+    return {
+      title: fallback.title || "Default Title",
+      description: fallback.description || "Default Description",
+    };
   }
 }
