@@ -17,7 +17,7 @@ const ExperienceSection = ({ Experience }) => {
             <div className="rounded-3xl overflow-hidden h-326">
               <Image
                 className="w-full h-full object-cover"
-                src={Experience.experiance_image1.url}
+                srcset={Experience.experiance_image1.url}
                 alt="Kunde erhält Beratung zum Treppenlift"
                 role="img"
                 width={Experience.experiance_image1.width}
@@ -28,7 +28,7 @@ const ExperienceSection = ({ Experience }) => {
             <div className="rounded-3xl overflow-hidden h-326">
               <Image
                 className="w-full h-full object-cover"
-                src={Experience.experiance_image2.url}
+                srcset={Experience.experiance_image2.url}
                 alt="Treppenlift wird im Haus montiert"
                 role="img"
                 width={Experience.experiance_image2.width}

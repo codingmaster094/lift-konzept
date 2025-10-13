@@ -80,7 +80,7 @@ const VorteileSection = ({ VorteileSectionData }) => {
                       <SwiperSlide key={index}>
                         <div className="relative group rounded-2xl overflow-hidden h-458">
                           <Image
-                            src={item.Vorteile_carouselImage.url}
+                            srcset={item.Vorteile_carouselImage.url}
                             alt="image for card 2"
                             className="w-full h-full object-cover object-top"
                             role="img"

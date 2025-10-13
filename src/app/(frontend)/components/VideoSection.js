@@ -36,7 +36,7 @@ const VideoSection = ({ VideoSectionData }) => {
     <section className="py-32 md:py-50 xl:py-100 relative">
       <Image
         className="absolute top-1/2 left-0 z-0 -translate-y-[33%] w-[34%]"
-        src="/images/stairs-background.png"
+        srcset="/images/stairs-background.png"
         alt="background image"
         role="img"
         width={650}
@@ -93,7 +93,7 @@ const VideoSection = ({ VideoSectionData }) => {
                   onClick={handlePlay}
                 >
                   <Image
-                    src="/images/Play.png"
+                    srcset="/images/Play.png"
                     alt="White logo of lift konzept"
                     role="img"
                     width={272}
@@ -105,7 +105,7 @@ const VideoSection = ({ VideoSectionData }) => {
               <div className="overlay w-full h-full absolute top-0 left-0 bg-[#0000003D]"></div>
               <Image
                 className="absolute top-32 left-32 z-10"
-                src="/images/konzept_white-logo.svg"
+                srcset="/images/konzept_white-logo.svg"
                 alt="White logo of lift konzept"
                 role="img"
                 width={150}
