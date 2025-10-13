@@ -39,13 +39,13 @@ export const GET = async (req: NextRequest) => {
       slug,
       data,
     })
-  } catch (error: any) {
+  } catch (error) {
     console.error('❌ Error fetching global:', error)
     return NextResponse.json(
       {
         success: false,
         message: `Error fetching global "${req.nextUrl.searchParams.get('slug')}"`,
-        error: error?.message,
+        error: error,
       },
       { status: 500 }
     )

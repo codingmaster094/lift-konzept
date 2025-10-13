@@ -3,7 +3,7 @@ export async function GET() {
     const res = await fetch(
       "https://lift-konzept.vercel.app/api/globals/robots",
       {
-        next: { revalidate: 0 },
+         next: { revalidate: 60 },
       }
     );
 

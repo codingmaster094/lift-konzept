@@ -8,9 +8,6 @@ import "swiper/css/pagination";
 import Image from "next/image";
 
 const StepsSection = ({ StepsSectionData }) => {
-  const duplicatedSlides = StepsSectionData.Steps_carousel?.concat(
-    StepsSectionData.Steps_carousel
-  );
   return (
     <section>
       <div className="container">
@@ -29,7 +26,7 @@ const StepsSection = ({ StepsSectionData }) => {
           <div className="facts-slider">
             <Swiper
               className="items-center gap-32"
-              modules={[Pagination, Navigation]}
+              modules={[Autoplay ,Pagination, Navigation]}
               spaceBetween={30}
               slidesPerView={3}
               loop={true}

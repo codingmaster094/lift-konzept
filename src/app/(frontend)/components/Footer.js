@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Footer = ({ FooterData, MenusData }) => {
+const Footer = ({ FooterData }) => {
 
   return (
     <footer>
