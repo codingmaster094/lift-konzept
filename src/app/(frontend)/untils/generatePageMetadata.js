@@ -2,7 +2,7 @@ export default async function generatePageMetadata(params , fallback ={}) {
   try {
     const metadata = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL ||
-      "https://lift-konzept.vercel.app//my-route?slug="
+      "https://lift-konzept.vercel.app/my-route?slug="
       }${params}`,
       { next: { revalidate: 60 } }
     );
