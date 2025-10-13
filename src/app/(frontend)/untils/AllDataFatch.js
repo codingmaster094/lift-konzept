@@ -5,7 +5,7 @@ export default async function Alldata(params) {
         process.env.NEXT_PUBLIC_BASE_URL ||
         "https://lift-konzept.vercel.app/my-route?slug="
       }${params}`,
-      { next: { revalidate: 0 } }
+      {  next: { revalidate: 60 }, }
     );
 
     if (!response) {

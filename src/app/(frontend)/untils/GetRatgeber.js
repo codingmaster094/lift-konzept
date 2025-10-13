@@ -5,7 +5,7 @@ export default async function GetPosts(params) {
         `${process.env.NEXT_RATGEBER_BASE_URL}/${params}` ||
         `https://lift-konzept.vercel.app/api/${params}`
       }`,
-      { next: { revalidate: 0 } }
+      { next: { revalidate: 60 }, }
     );
     if (!response) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);

@@ -1,4 +1,4 @@
-import type { GlobalConfig, PayloadRequest } from 'payload'
+import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
