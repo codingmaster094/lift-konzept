@@ -12,7 +12,7 @@ export default async function generatePageMetadata(params , fallback ={}) {
     }
 
     const data = await metadata.json();
-    const seo = data?.data.seo || {};
+    const seo = data?.data?.seo || {};
 
     const title = seo.meta.title != undefined ? seo.meta.title : "Default title"
     const description = seo.meta.description || fallback.description || "Default Description";

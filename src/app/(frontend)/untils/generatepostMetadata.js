@@ -13,7 +13,7 @@ export default async function generatepostMetadata(params , fallback ={}) {
     }
 
     const data = await metadata.json();
-    const seo = data?.docs.seo || {};
+    const seo = data?.docs?.seo || {};
 
     const title = seo.meta.title != undefined ? seo.meta.title : "Default title"
     const description = seo.meta.description || fallback.description || "Default Description";
