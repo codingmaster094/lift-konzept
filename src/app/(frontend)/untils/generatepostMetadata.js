@@ -1,8 +1,8 @@
 export default async function generatepostMetadata(params , fallback ={}) {
   try {
     const metadata = await fetch(
-      `${process.env.NEXT_RATGEBER_SINGLE_BASE_URL ||
-      "https://lift-konzept.vercel.app/api/ratgeber?where[slug][equals]="
+      `${process.env.NEXT_PUBLIC_BASE_URL ||
+      "https://lift-konzept.vercel.app//my-route?slug="
       }${params}`,
       { next: { revalidate: 60 } }
     );
