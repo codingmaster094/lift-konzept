@@ -4,7 +4,7 @@ export default async function generatePageMetadata(params , fallback ={}) {
       `${process.env.NEXT_PUBLIC_BASE_URL ||
       "https://lift-konzept.vercel.app//my-route?slug="
       }${params}`,
-      { next: { revalidate: 60 } }
+      { next: { revalidate: 0 } }
     );
 
     if (!metadata) {
