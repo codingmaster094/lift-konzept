@@ -53,7 +53,7 @@ const SingleDetails = ({ title, SingleData }) => {
     setUpdatedHTML(doc.body.innerHTML); // updated HTML string with IDs
   }, [SingleData.contents.Gutenberg_html]);
   return (
-    <section className="page-sec py-100">
+    <section className="page-sec py-32 md:py-50 xl:py-100">
       <div className="container">
         <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
         <div className="form-main-top flex justify-between items-start lg:items-end gap-16 lg:gap-32 flex-col lg:flex-row pt-64 pb-48">
@@ -88,7 +88,7 @@ const SingleDetails = ({ title, SingleData }) => {
               <input
                 type="search"
                 id="site-search"
-                className="search-field border border-solid border-[#F0F0F0] rounded-4xl py-12 px-24 max-w-450 w-full"
+                className="search-field border border-solid border-[#F0F0F0] rounded-4xl py-12 pl-24 pr-168 max-w-450 w-full"
                 placeholder="Wonach suchen Sie?"
                 name="s"
                 aria-label="Suchfeld"

@@ -33,8 +33,9 @@ const TreppenliftAdvisor = ({ TreppenliftAdvisorData }) => {
             </div>
           </div>
           <div>
-            <div className="steps flex gap-18 md:gap-32 lg:gap-64 items-stretch flex-col lg:flex-row">
-              <div className="step-left w-full lg:w-1/2 flex flex-col gap-16">
+            <div className="steps flex gap-18 md:gap-32 xl:gap-64 items-stretch flex-col lg:flex-row">
+              <div className="step-left w-full lg:w-1/2">
+                <div className="flex flex-col gap-16 sticky top-0">
                 <div className="rounded-xl overflow-hidden h-326">
                   <Image
                     className="w-full h-full object-cover"
@@ -71,6 +72,7 @@ const TreppenliftAdvisor = ({ TreppenliftAdvisorData }) => {
                     />
                   </div>
                 </div>
+              </div>
               </div>
               <div className="step-right w-full lg:w-1/2">
                 <div className="inn flex flex-col gap-26">

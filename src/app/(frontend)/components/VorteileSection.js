@@ -89,13 +89,13 @@ const VorteileSection = ({ VorteileSectionData }) => {
                             fetchPriority="high"
                           />
 
-                          <div className="absolute flex justify-center items-start h-110 sm:h-80 bottom-0 left-0 w-full transition-all duration-500 ease-linear bg-[#F2F2F2E5] py-32 px-16 xl:px-32 group-hover:h-500 group-hover:items-center group-hover:bg-[linear-gradient(0deg,rgba(0,173,239,0.1),rgba(0,173,239,0.1)),linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.9))]">
-                            <div className="flex flex-col text-base group-hover:gap-16 transition-all duration-500 ease-linear">
+                          <div className="slide-content absolute flex justify-center items-start h-110 sm:h-80 bottom-0 left-0 w-full transition-all duration-500 ease-linear bg-[#F2F2F2E5] py-32 px-16 xl:px-32 group-hover:h-500 group-hover:items-center group-hover:bg-[linear-gradient(0deg,rgba(0,173,239,0.1),rgba(0,173,239,0.1)),linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.9))]">
+                            <div className="slide-flex flex flex-col text-base group-hover:gap-16 transition-all duration-500 ease-linear">
                               <h3
                                 className="text-h5/snug font-medium"
                                 dangerouslySetInnerHTML={{ __html: item.title }}
                               ></h3>
-                              <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-h-full group-hover:opacity-100">
+                              <div className="slide-inn max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-h-full group-hover:opacity-100">
                                 {item.richText.root.children &&
                                   item.richText.root.children.length > 0 &&
                                   item.richText.root.children.map(

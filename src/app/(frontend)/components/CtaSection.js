@@ -5,9 +5,9 @@ const CtaSection = ({ CtaSectionData }) => {
   return (
     <section className="">
       <div className="container">
-        <div className="inner p-16 sm:p-32 lg:p-64 relative overflow-hidden rounded-xl">
+        <div className="inner p-0 xsm:p-32 lg:p-64 relative overflow-hidden rounded-xl">
           <Image
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover object-[100%_22%]"
             src={CtaSectionData.CtaImage.url}
             alt="Treppenlift Beratung Hintergrundbild"
             role="img"
@@ -16,7 +16,7 @@ const CtaSection = ({ CtaSectionData }) => {
             fetchPriority="high"
           />
 
-          <div className="content rounded-xl bg-[#0065A3CC] bg-blur-md relative z-10 h-full p-20 md:p-48 max-w-650 w-full">
+          <div className="content rounded-xl bg-[#0065A3CC] bg-blur-md relative z-10 h-full p-16 md:p-48 max-w-650 w-full">
             <div className="heading text-white space-y-16">
               <h2
                 className="text-h2/normal"

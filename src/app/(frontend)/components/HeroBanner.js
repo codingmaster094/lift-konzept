@@ -48,7 +48,7 @@ const HeroBanner = ({ image, images_1, heroData }) => {
             <Image
               className="absolute top-0 left-0 z-10"
               src={image}
-              alt="background image for Hero Section"
+              alt=""
               role="img"
               width={249}
               height={249}
@@ -57,7 +57,7 @@ const HeroBanner = ({ image, images_1, heroData }) => {
             <Image
               className="absolute bottom-0 right-0 z-10 hidden xlg:block"
               src={images_1}
-              alt="background image for Hero Section"
+              alt=""
               role="img"
               width={249}
               height={249}
@@ -69,7 +69,7 @@ const HeroBanner = ({ image, images_1, heroData }) => {
             heroData.heroImage.url !=undefined && 
             <Image
               className="absolute top-0 w-full h-full object-cover"
-              srcset={heroData.heroImage.url}
+              sr={heroData.heroImage.url}
               alt={heroData.heroImage.alt}
               role="img"
               width={heroData.heroImage.width}

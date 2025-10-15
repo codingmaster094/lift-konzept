@@ -6,6 +6,7 @@ const OffCanvas = ({ menus, isOpen, onClose }) => {
   return (
     <div
       id="mobile-curtain"
+      onClick={onClose}
       className={`z-20 fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] transform transition-transform duration-300 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}

@@ -88,7 +88,7 @@ const VideoSection = ({ VideoSectionData }) => {
               {!isPlaying && (
                 <button
                   type="button"
-                  className="play-btn absolute inset-0 flex items-center justify-center z-10"
+                  className="play-btn absolute inset-0 flex items-center justify-center z-[99]"
                   aria-label="Play Sintel movie trailer"
                   onClick={handlePlay}
                 >
@@ -102,9 +102,9 @@ const VideoSection = ({ VideoSectionData }) => {
                   />
                 </button>
               )}
-              <div className="overlay w-full h-full absolute top-0 left-0 bg-[#0000003D]"></div>
+              <div className="overlay w-full h-full absolute top-0 left-0 bg-[#0000003D] z-[11]"></div>
               <Image
-                className="absolute top-32 left-32 z-10"
+                className="absolute top-32 left-32 z-[99]"
                 srcset="/images/konzept_white-logo.svg"
                 alt="White logo of lift konzept"
                 role="img"

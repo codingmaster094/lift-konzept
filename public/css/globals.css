@@ -138,6 +138,9 @@
   nav ul li a {
     @apply relative text-dark before:content-[''] before:w-0 before:h-3 before:bg-border before:absolute before:-bottom-10 before:left-0 before:rounded-4xl before:opacity-0 before:transition-all before:duration-500 before:ease-in-out hover:before:w-24 hover:before:opacity-100 active:before:w-24 focus:before:w-24 active:before:opacity-100 focus:before:opacity-100;
   }
+  nav ul li.active a:before{
+    @apply opacity-100 !w-1/2
+  }
   h1,
   h2 {
     @apply font-bold;
@@ -146,7 +149,7 @@
     @apply h-120 md:h-auto;
   }
   .vorteil-slider .swiper {
-    @apply !pt-0 md:!pt-150 mt-0 md:!-mt-100;
+    @apply !pt-0 md:!pt-100 lg:!pt-150 mt-0 md:!-mt-100;
   }
 
   .vorteil-slider .swiper .swiper-button-prev svg {
@@ -409,4 +412,17 @@ blockquote a {
   .single-post-content blockquote {
     padding: 20px;
   }
+  .swiper-slide.swiper-slide-active .slide-content{
+    height:100%;
+    align-items: center;
+    background: linear-gradient(0deg,rgba(0,173,239,0.1),rgba(0,173,239,0.1)),linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.9));
+  }
+  .swiper-slide.swiper-slide-active .slide-flex{
+    gap:16px;
+  }
+  .swiper-slide.swiper-slide-active .slide-inn{
+    max-height:100%;
+    opacity:1;
+  }
+ 
 }

@@ -40,15 +40,15 @@ const Header = ({ HeaderData, MenusData }) => {
             </Link>
 
             {/* Navigation + CTA + Menu Button */}
-            <div className="flex gap-16 xl:gap-24 justify-center items-center">
+            <div className="flex gap-16 xxl:gap-24 justify-center items-center">
               {/* Desktop Menu */}
               <nav
                 id="menu"
-                className="2xl:block hidden"
+                className="xl:block hidden"
                 role="navigation"
                 aria-label="menü"
               >
-                <ul className="flex [&_li]:px-6 xl:[&_li]:px-12 xxl:gap-16 text-center">
+                <ul className="flex [&_li]:px-6 xxl:[&_li]:px-12 xxl:gap-16 text-center">
                   {MenusData.menus.map((menu, index) => (
                     <li key={index}>
                       <Link
@@ -101,7 +101,7 @@ const Header = ({ HeaderData, MenusData }) => {
               {/* Mobile Menu Button */}
               <button
                 id="menu-btn"
-                className="2xl:hidden block"
+                className="xl:hidden block"
                 aria-label="Toggle menu"
                 onClick={() => setIsOpen(true)}
               >

@@ -4,7 +4,7 @@ import React from "react";
 
 const SingleBlog = ({ RatgeberData }) => {
   return (
-    <section className="single-blog-sec py-100">
+    <section className="single-blog-sec py-32 md:py-50 xl:py-100">
       <div className="container">
         <div className="form-main space-y-48">
           <div className="form-main-top flex justify-between items-start lg:items-end gap-16 lg:gap-32 flex-col lg:flex-row">
@@ -28,7 +28,7 @@ const SingleBlog = ({ RatgeberData }) => {
                 <input
                   type="search"
                   id="site-search"
-                  className="search-field !border-transparent bg-[#F0F0F0] rounded-4xl px-24 py-14 w-full outline-none max-w-full md:max-w-450"
+                  className="search-field !border-transparent bg-[#F0F0F0] rounded-4xl pl-24 pr-68 py-14 w-full outline-none max-w-full md:max-w-450"
                   placeholder="Wonach suchen Sie?"
                   name="s"
                   aria-label="Suchfeld"

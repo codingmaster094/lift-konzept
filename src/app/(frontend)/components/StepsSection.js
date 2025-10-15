@@ -11,7 +11,7 @@ const StepsSection = ({ StepsSectionData }) => {
   return (
     <section>
       <div className="container">
-        <div className="inner space-y-24 md:space-y-48">
+        <div className="inner mb-24 md:mb-48">
           <div className="heading text-base space-y-16 text-center">
             <span
               className="block"
@@ -23,17 +23,20 @@ const StepsSection = ({ StepsSectionData }) => {
             ></h2>
           </div>
 
-          <div className="facts-slider">
+          
+        </div>
+      </div>
+      <div className="facts-slider pl-16 xxl:pl-[200px] max-w-[1250px] xxl:max-w-full ml-auto xxl:ml-0 mr-auto xxl:mr-0 pr-16 xxl:pr-0">
             <Swiper
               className="items-center gap-32"
               modules={[Autoplay ,Pagination, Navigation]}
               spaceBetween={30}
-              slidesPerView={3}
-              loop={true}
-              autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-              }}
+              slidesPerView={3.5}
+              loop={false}
+              // autoplay={{
+              //   delay: 4000,
+              //   disableOnInteraction: false,
+              // }}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -45,6 +48,10 @@ const StepsSection = ({ StepsSectionData }) => {
                 },
                 1024: {
                   slidesPerView: 3,
+                  pagination: false,
+                },
+               1440: {
+                  slidesPerView: 3.5,
                   pagination: false,
                 },
               }}
@@ -99,8 +106,6 @@ const StepsSection = ({ StepsSectionData }) => {
                 : null}
             </Swiper>
           </div>
-        </div>
-      </div>
     </section>
   );
 };
