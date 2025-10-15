@@ -7,7 +7,7 @@ const CtaSection = ({ CtaSectionData }) => {
       <div className="container">
         <div className="inner p-0 xsm:p-32 lg:p-64 relative overflow-hidden rounded-xl">
           <Image
-            className="absolute top-0 left-0 w-full h-full object-cover object-[100%_22%]"
+            className="absolute top-0 left-0 w-full h-full object-cover"
             src={CtaSectionData.CtaImage.url}
             alt="Treppenlift Beratung Hintergrundbild"
             role="img"

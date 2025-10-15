@@ -2,11 +2,15 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // 👈 Import this
 import OffCanvas from "./OffCanvas";
 import Lenis from "@studio-freight/lenis";
+
 const Header = ({ HeaderData, MenusData }) => {
   const [isOpen, setIsOpen] = useState(false);
-   useEffect(() => {
+  const pathname = usePathname(); // 👈 Get current route
+
+  useEffect(() => {
     const lenis = new Lenis();
 
     function raf(time) {
@@ -21,6 +25,7 @@ const Header = ({ HeaderData, MenusData }) => {
       lenis.destroy();
     };
   }, []);
+
   return (
     <>
       <header className="py-16">
@@ -32,7 +37,6 @@ const Header = ({ HeaderData, MenusData }) => {
                 className="w-130 sm:w-180 xl:w-200"
                 src={HeaderData.Header_Logo.url}
                 alt="Company Name logo"
-                role="img"
                 width={200}
                 height={60}
                 fetchPriority="high"
@@ -46,21 +50,32 @@ const Header = ({ HeaderData, MenusData }) => {
                 id="menu"
                 className="xl:block hidden"
                 role="navigation"
-                aria-label="menü"
+                aria-label="menu"
               >
                 <ul className="flex [&_li]:px-6 xxl:[&_li]:px-12 xxl:gap-16 text-center">
-                  {MenusData.menus.map((menu, index) => (
-                    <li key={index}>
-                      <Link
-                        href={menu.link?.url || "/"}
-                        aria-label={menu.link?.label || ""}
-                        target={menu.link?.target || "_self"}
-                        role="link"
-                      >
-                        {menu.link?.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {MenusData.menus.map((menu, index) => {
+                    const menuUrl = menu.link?.url || "/";
+                    const isActive =
+                      pathname === menuUrl ||
+                      (menuUrl !== "/" && pathname.startsWith(menuUrl));
+
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={menuUrl}
+                          aria-label={menu.link?.label || ""}
+                          target={menu.link?.target || "_self"}
+                          className={`${
+                            isActive
+                              ? "active"
+                              : "text-primary"
+                          } transition-all duration-200`}
+                        >
+                          {menu.link?.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
 
@@ -68,36 +83,33 @@ const Header = ({ HeaderData, MenusData }) => {
               <Link
                 href={HeaderData.link.url}
                 target={HeaderData.link.target}
-                role="link"
-                aria-label="Kostenlose Beratung"
                 className="btn-secondary !hidden sm:!block"
               >
                 <span className="relative z-10 flex justify-center items-center gap-10">
                   <Image
                     src="/images/call.webp"
                     alt="call icon"
-                    role="img"
                     width={24}
                     height={24}
                   />
                   <span>{HeaderData.link.Kontakt_label}</span>
                 </span>
               </Link>
+
               {/* call icon */}
               <Link
-                aria-label="Call us at +49 122 123 1243"
                 href="tel:+491221231243"
-                role="link"
+                aria-label="Call us at +49 122 123 1243"
                 className="sm:hidden flex justify-center items-center bg-secondary w-40 h-40 rounded-full"
               >
                 <Image
                   src="/images/call.webp"
                   alt="call icon"
-                  role="img"
                   width={24}
                   height={24}
                 />
               </Link>
+
               {/* Mobile Menu Button */}
               <button
                 id="menu-btn"
@@ -108,7 +120,6 @@ const Header = ({ HeaderData, MenusData }) => {
                 <Image
                   src="/images/menu-btn.svg"
                   alt="Menu button"
-                  role="img"
                   width={40}
                   height={40}
                 />
@@ -119,7 +130,11 @@ const Header = ({ HeaderData, MenusData }) => {
       </header>
 
       {/* OffCanvas Menu */}
-      <OffCanvas menus={MenusData.menus} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <OffCanvas
+        menus={MenusData.menus}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
     </>
   );
 };

@@ -50,7 +50,7 @@ const ExperienceSection = ({ Experience }) => {
                 ></h2>
               </div>
 
-              <div className="para space-y-12">
+              <div className="para space-y-12 text-[16px]">
                 {Experience.richText.root.children &&
                   Experience.richText.root.children.length > 0 &&
                   Experience.richText.root.children.map((child, index) => {

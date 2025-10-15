@@ -96,7 +96,7 @@ const TreppenliftGallery = ({ TreppenliftGalleryData }) => {
               ))}
             </div>
           </div>
-          
+
           {/* ✅ Load More Button */}
           <div className="flex justify-center mt-10">
             <Link href="/" role="button" className="btn-secondary">

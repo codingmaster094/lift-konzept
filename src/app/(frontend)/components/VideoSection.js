@@ -102,7 +102,7 @@ const VideoSection = ({ VideoSectionData }) => {
                   />
                 </button>
               )}
-              <div className="overlay w-full h-full absolute top-0 left-0 bg-[#0000003D] z-[11]"></div>
+              <div className="overlay w-full h-full absolute top-0 left-0 bg-[#0000003D] z-[11]c"></div>
               <Image
                 className="absolute top-32 left-32 z-[99]"
                 srcset="/images/konzept_white-logo.svg"

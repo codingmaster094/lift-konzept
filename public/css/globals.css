@@ -138,7 +138,7 @@
   nav ul li a {
     @apply relative text-dark before:content-[''] before:w-0 before:h-3 before:bg-border before:absolute before:-bottom-10 before:left-0 before:rounded-4xl before:opacity-0 before:transition-all before:duration-500 before:ease-in-out hover:before:w-24 hover:before:opacity-100 active:before:w-24 focus:before:w-24 active:before:opacity-100 focus:before:opacity-100;
   }
-  nav ul li.active a:before{
+  .active:before{
     @apply opacity-100 !w-1/2
   }
   h1,
@@ -413,16 +413,16 @@ blockquote a {
     padding: 20px;
   }
   .swiper-slide.swiper-slide-active .slide-content{
-    height:100%;
-    align-items: center;
-    background: linear-gradient(0deg,rgba(0,173,239,0.1),rgba(0,173,239,0.1)),linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.9));
+    height:100% !important;
+    align-items: center !important;
+    background: linear-gradient(0deg,rgba(0,173,239,0.1),rgba(0,173,239,0.1)),linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.9)) !important;
   }
   .swiper-slide.swiper-slide-active .slide-flex{
-    gap:16px;
+    gap:16px !important;
   }
   .swiper-slide.swiper-slide-active .slide-inn{
-    max-height:100%;
-    opacity:1;
+    max-height:100% !important;
+    opacity:1 !important;
   }
  
 }
