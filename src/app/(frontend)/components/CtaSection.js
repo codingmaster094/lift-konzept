@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 const CtaSection = ({ CtaSectionData }) => {
   return (
-    <section className="">
+    <section>
       <div className="container">
         <div className="inner p-0 xsm:p-32 lg:p-64 relative overflow-hidden rounded-xl">
           <Image
